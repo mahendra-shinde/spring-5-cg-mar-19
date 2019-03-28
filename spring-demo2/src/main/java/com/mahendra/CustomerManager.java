@@ -1,11 +1,16 @@
 package com.mahendra;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component //Alternative <bean> tag
 public class CustomerManager {
 private CustomerDAO dao;
 	
 	//Example of Constructor Injection
 	// Target class (CustomerManager) gets dependency (CustomerDAO)
 	// Via its constructor!!	
+	@Autowired  //Perform Dependency Injection
 	public CustomerManager(CustomerDAO dao) {
 	this.dao = dao;
 	
