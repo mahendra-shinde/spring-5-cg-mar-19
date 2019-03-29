@@ -3,7 +3,7 @@ package com.mahendra;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component //Alternative <bean> tag
+@Component("manager") //Alternative <bean> tag
 public class CustomerManager {
 private CustomerDAO dao;
 	
