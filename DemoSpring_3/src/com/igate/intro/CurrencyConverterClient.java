@@ -11,5 +11,6 @@ public class CurrencyConverterClient {
 		CurrencyConverter curr = (CurrencyConverter) factory.getBean("currencyConverter");
 		double rupees = curr.dollarsToRupees(50.0);
 		System.out.println("50 $ is "+rupees+" Rs.");
+		
 	}
 }

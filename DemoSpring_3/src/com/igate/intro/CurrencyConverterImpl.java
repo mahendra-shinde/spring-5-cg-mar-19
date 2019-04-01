@@ -21,4 +21,14 @@ public class CurrencyConverterImpl implements CurrencyConverter {
 		System.out.println("dollarsToRupees()");		
 		return dollars * exchangeService.getExchangeRate("INR");
 	}
+	
+	// Method Must be "public void"
+	// And Must not take any arguments
+	public void doInit() {
+		System.out.println("Initilizing Converter");
+	}
+	
+	public void doDestroy() {
+		System.out.println("Destroying the Converter");
+	}
 };

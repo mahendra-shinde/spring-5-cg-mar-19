@@ -15,7 +15,9 @@
 	  </constructor-arg>
 	</bean>
 
-	<bean id="currencyConverter" class="com.igate.intro.CurrencyConverterImpl">
+	<bean id="currencyConverter" 
+		class="com.igate.intro.CurrencyConverterImpl"
+		init-method="doInit" destroy-method="doDestroy" >
 		<property name="exchangeService">
 			<ref bean="exchangeService"/>		
 		</property>

@@ -1,6 +1,7 @@
 package com.mahendra;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
@@ -8,7 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 	
 		//Initializing Context (Spring IOC Container) 
-		ApplicationContext context = 
+		AbstractApplicationContext context = 
 				new ClassPathXmlApplicationContext("spring.xml");
 		
 		//Get Dao Object by TYPE 
@@ -22,6 +23,7 @@ public class Main {
 		CustomerManager man = context.getBean(CustomerManager.class);
 		System.out.println("dao1 and dao2 are same objects? "+(dao1==dao2));
 		
+		context.close();
 	}
 
 }
