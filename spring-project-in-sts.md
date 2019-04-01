@@ -1,15 +1,18 @@
-Creating new Spring Web Application using STS
+## Creating new Spring Web Application using STS
 
 1.	New --> Spring Legacy Project
+	
 	1.1 Name of Project:	mvc-demo1
 	1.2 Select Type:		Simple Spring Web Maven
 	1.3 Click "Finish" button
 
 2.	To Resolve the ERROR
+	
 	Right click on project name "mvc-demo1"
 	Select "tageted runtimes" and check "Pival tc..."
 
 3.	Open "pom.xml" for current project and make few changes
+	
 	3.1 Change java.version to 1.8 from 1.6
 		<java.version>1.8</java.version>
 	3.2	Change servlet.version from 2.5 to 3.0
