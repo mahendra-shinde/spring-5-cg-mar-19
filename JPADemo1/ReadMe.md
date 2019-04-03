@@ -8,10 +8,13 @@ you would get ClassNotFoundException !!**
 ## The Steps
 
 1.  Create new "Spring Legacy Project"
+
     Choose Template "Simple Spring Web Maven"
 
 2.  Open "pom.xml" file
+
     2.1 Add new dependency:
+
         <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-orm</artifactId>
@@ -19,17 +22,22 @@ you would get ClassNotFoundException !!**
         </dependency>		
     
     2.2 Change spring version from 3.1.1 to 5.0.9
+
     		<spring-framework.version>5.0.9.RELEASE</spring-framework.version>
     
     2.3 Change Hibernate version to 5
+
     		<hibernate.version>5.0.12.Final</hibernate.version>
     
     2.4 Change JUnit version to 4.12
+
     		<junit.version>4.12</junit.version>
 
-3.  Goto "src/main/resources/spring/application-config.xml"
-        Switch to "namespaces" TAB
-        Select "tx" namespace and switch to "source" TAB
+3.  Goto **src/main/resources/spring/application-config.xml**
+
+    Switch to "namespaces" TAB
+    
+    Select "tx" namespace and switch to "source" TAB
 
         <context:component-scan base-package="com.mahendra"/>
 
@@ -54,6 +62,7 @@ you would get ClassNotFoundException !!**
         </bean>
 
 4.  Create New ENTITY class "Country"
+    
         @Entity
         @Table(name="countries")
         public class Country {
@@ -71,6 +80,7 @@ you would get ClassNotFoundException !!**
         //Generate Setters, Getters and Constructor
 
 5.  Create a DAO Interface
+    
         public interface CountryDAO {
 
             Country findById(String code);
@@ -78,6 +88,7 @@ you would get ClassNotFoundException !!**
         }
 
 6.  Create Implementation class
+    
         import java.util.List;
 
         import javax.persistence.*;
@@ -109,10 +120,14 @@ you would get ClassNotFoundException !!**
         }
 
 7.  Create JUnit Test case for DAOImpl class
-        Right click on "CountryDAOImpl" ->New ->Other -> JUnit Test Case
-        choose source folder "src/main/test"
-        Click Next
-        Select both "findById" and "findByRegio" method and finish
+    
+    Right click on "CountryDAOImpl" ->New ->Other -> JUnit Test Case
+    
+    choose source folder "src/main/test"
+    
+    Click Next
+    
+    Select both "findById" and "findByRegio" method and finish
 
 8.  Modify the Test case class like this:
 
