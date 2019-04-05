@@ -1,12 +1,14 @@
 package com.cg.webapp.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cg.webapp.dao.ICountryDAO;
 import com.cg.webapp.models.Country;
+import com.cg.webapp.utils.NoCountryFoundException;
 
 @Service
 public class CountryServiceImpl implements ICountryService {
@@ -15,8 +17,13 @@ public class CountryServiceImpl implements ICountryService {
 	
 	@Override
 	public Country findByCode(String code) {
+		
 		System.out.println("Invoking dao.findById "+code);
-		return dao.findById(code).get();
+		Optional<Country> country = dao.findById(code);
+		if(! country.isPresent()) {
+			throw new NoCountryFoundException(code);
+		}
+		return country.get();
 	}
 
 	@Override
